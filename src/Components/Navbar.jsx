@@ -6,7 +6,7 @@ export default function Navbar({
   logo = "MyShoes",
   links = [
     { name: "Home", href: "/" },
-    { name: "Products", href: "/Products" },
+    { name: "Products", href: "./Products" },
     { name: "Offers", href: "#offers" },
     { name: "Contact", href: "#contact" },
   ],
