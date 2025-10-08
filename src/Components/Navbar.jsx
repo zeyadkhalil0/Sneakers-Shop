@@ -6,7 +6,7 @@ export default function Navbar({
   logo = "MyShoes",
   links = [
     { name: "Home", href: "/" },
-    { name: "Products", href: "/products" },
+    { name: "Products", href: "/Products" },
     { name: "Offers", href: "#offers" },
     { name: "Contact", href: "#contact" },
   ],
@@ -103,17 +103,3 @@ export default function Navbar({
     </header>
   );
 }
-
-/*
-Usage example:
-import Navbar from './Navbar'
-
-function App(){
-  return (
-    <div>
-      <Navbar logo="ShopName" />
-      <main>...app content...</main>
-    </div>
-  )
-}
-*/
