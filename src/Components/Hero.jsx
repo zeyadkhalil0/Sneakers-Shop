@@ -57,7 +57,7 @@ const Hero = ({loading}) => {
         }}
         navigation={false}
         modules={[Autoplay, Pagination]}
-        className="h-[80vh]"
+        className="md:h-[90vh] h-[70vh]"
       >
         {Slides.map((slide, index) => (
           <SwiperSlide key={index}>
