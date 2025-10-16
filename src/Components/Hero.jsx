@@ -81,7 +81,7 @@ const Hero = ({loading}) => {
                   href="#popular"
                   className="text-white font-semibold bg-indigo-600 shadow-md py-3 px-8 rounded-full hover:bg-indigo-800 transition"
                data-aos="fade-up"   >
-                  Shop Now
+                  Explore Now
                 </a>
               </div>
             </>

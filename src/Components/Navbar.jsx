@@ -18,7 +18,7 @@ useEffect(() => {
     if (target) {
       setTimeout(() => {
         target.scrollIntoView({ behavior: "smooth" });
-      }, 1500);
+      }, 2000);
     }
   }
 }, []);

@@ -28,7 +28,7 @@ const [offers,setOffers] = useState([])
 
   return (
     <>
-    <section id="offers" className="py-20 px-8 bg-gray-200 ">
+    <section id="offers" className="py-20 px-8 bg-gray-100 ">
       <div
         className="text-center mb-10"
         data-aos="fade-down"
