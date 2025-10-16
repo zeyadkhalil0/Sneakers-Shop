@@ -1,30 +1,13 @@
-import React, { useEffect, useState } from "react";
+import {React, useEffect} from "react";
 import {  FaShoppingCart, FaHeart } from "react-icons/fa";
 import Loader from './Loader'
+import Aos from "aos";
+import "aos/dist/aos.css";
 
-const Cards = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true); // 
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch("https://sneaks-api-xobu.vercel.app/home");
-        if (!response.ok) throw new Error("Failed to fetch products");
-
-        const data = await response.json();
-        setProducts(data);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
+const Cards = ({ products, loading }) => {
+    useEffect(() => {
+      Aos.init({ duration: 1000, once: true });
   }, []);
-
   if (loading) {
     return (
       <div className="absolute inset-0 z-50 overflow-hidden flex items-center justify-center h-screen bg-gray-100">
@@ -34,13 +17,13 @@ const Cards = () => {
   }
   return (
       <>
-      <div className="text-center my-20">
-        <h1 className="text-5xl font-semibold text-gray-800 drop-shadow-lg">Products</h1>
+      <div id="popular" className="text-center my-20">
+        <h1 className="text-5xl font-semibold text-gray-800 drop-shadow-lg">Common Items</h1>
       </div>
-    <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-8">
+    <section  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-8 mb-20">
       {products.slice(0,30).map((item) => (
         <>
-        <div className="bg-white rounded-lg p-4 py-8 shadow-lg flex flex-col">
+        <div className="bg-white rounded-lg p-4 py-8 shadow-lg flex flex-col" data-aos="fade-up">
             {/* Brand And QuickView Btn */}
             <div className="flex items-center justify-between">
             <span className="text-lg font-bold drop-shadow-lg">{item.brand}</span>

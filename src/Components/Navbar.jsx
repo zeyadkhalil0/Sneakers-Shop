@@ -1,18 +1,27 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom"; 
+import React, { useState,useEffect } from "react";
 
 
 export default function Navbar({
   logo = "MyShoes",
   links = [
     { name: "Home", href: "/" },
-    { name: "Products", href: "./Products" },
-    { name: "Offers", href: "#offers" },
-    { name: "Contact", href: "#contact" },
+    { name: "Products", href: "/Products" },
+    { name: "Offers", href: "/#offers" },
+    { name: "About", href: "/AboutUs" },
   ],
   cta = { label: "Shop Now", href: "/products" },
 }) {
   const [open, setOpen] = useState(false);
+useEffect(() => {
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: "smooth" });
+      }, 1500);
+    }
+  }
+}, []);
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
